@@ -1,15 +1,19 @@
-Welcome to your new dbt project!
+# E-Commerce Sales & Profitability Analytics (dbt + DuckDB)
 
-### Using the starter project
+Analysing sales and profitability data to identify drivers behind performance trends.
 
-Try running the following commands:
-- dbt run
-- dbt test
+## Overview
 
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+## Dataset
+- Source: https://data.world/anilsharma87
+- Size/scope: row counts per table, number of tables, time period, granularity
+- Notable characteristics: 
+
+## Tech Stack
+- dbt-core
+- DuckDB
+- VS Code
+- Git / GitHub
+
+## Project Structure
