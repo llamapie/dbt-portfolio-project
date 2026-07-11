@@ -30,3 +30,11 @@ dbt show --inline "select count(*) from {{ ref('stg_other_table') }} o join {{ r
 ## stg_international_sales
 
 - All columns renamed to replace keywords and capitalisation - more descriptive names given.
+- Excluded index column as unnecessary.
+
+## stg_may_2022
+
+- File contains sales data from May 2022 for product profitability optimisation.
+- Dataset defines "Catalog" as Category of product, and "Category" as Type of product. This could be confusing, will check and compare the data then rename with better description.
+- "MRP Old" is the original price of the product, "TP 1 & TP 2 MRP Old" also defined as the original price of the product. Compare the data, see if both columns are required.
+- 
