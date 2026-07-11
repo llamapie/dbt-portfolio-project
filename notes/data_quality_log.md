@@ -26,3 +26,7 @@ dbt show --inline "select count(*) from {{ ref('stg_other_table') }} o join {{ r
 - "Expance" varchar column, contained sub-header "Particular" and descriptive data. Inferred name: "expense_description".
 - "Unnamed: 3" varchar column, contained sub-header "Amount" and numeric data. Inferred name: "expense_amount".
 - Excluded redundant data and sub-header rows including "Particular", "Amount", "Pending Amount", "Total".
+
+## stg_international_sales
+
+- All columns renamed to replace keywords and capitalisation - more descriptive names given.
