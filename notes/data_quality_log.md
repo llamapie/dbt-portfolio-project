@@ -43,4 +43,11 @@ dbt show --inline "select count(*) from {{ ref('stg_other_table') }} o join {{ r
 - File contains sales data from May 2022 for product profitability optimisation.
 - Dataset describes "Catalog" as Category of product, and "Category" as Type of product. This could be confusing. After checking and comparing the data of each column, renamed "Catalog" to "product_category" and "Category" to "product_type".
 - "TP" column is simply described as "tp", data is numeric but not given a data type in the dataset. Could mean "Trade Price", "Total Price", "Target Price" etc. Kept as is until further investigation.
+Update: In another table "TP" described as "Price of product on third-party platform", data type integer.
 - "MRP Old" is the original price of the product, "Final MRP Old" is the final price of the product after.
+
+## stg_p_l_march_2021
+
+- Table lacks description in dataset.
+- Column names almost identical to table "May_2022" which is described as sales data to optimize product profitability.
+- "TP 1" and "TP 2" described as "Price of product on -- third-party platform.".

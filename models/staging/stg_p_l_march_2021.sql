@@ -1,5 +1,5 @@
 with source AS (
-    SELECT * FROM {{ref('May_2022')}}
+    SELECT * FROM {{ref('P_L_March_2021')}}
 ),
 renamed AS (
     SELECT
@@ -8,7 +8,8 @@ renamed AS (
     "Catalog"::string AS product_category,
     "Category"::string AS product_type,
     "Weight"::integer AS product_weight,
-    "TP"::integer AS tp_product_price,
+    "TP 1"::integer AS tp_1_product_price,
+    "TP 2"::integer AS tp_2_product_price,
     "MRP Old"::integer AS old_product_price,
     "Final MRP Old"::integer AS final_product_price,
     "Ajio MRP"::integer AS ajio_product_price,
