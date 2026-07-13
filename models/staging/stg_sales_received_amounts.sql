@@ -4,7 +4,7 @@ with source AS (
 renamed AS (
     SELECT
     "index" AS item_index,
-    "Recived Amount" AS received_date,
+    "Recived Amount"::numeric AS received_date,
     "Unnamed: 1" AS received_amount
     FROM source
     WHERE "Recived Amount" NOT IN ('Particular', 'Total')

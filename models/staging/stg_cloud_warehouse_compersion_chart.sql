@@ -4,9 +4,9 @@ with source AS (
 renamed AS (
     SELECT
     "index" AS item_index,
-    "Shiprocket" AS shiprocket,
+    "Shiprocket"::numeric AS shiprocket,
     "Unnamed: 1" AS description_increff,
-    "INCREFF" AS increff
+    "INCREFF"::numeric AS increff
     FROM source
 )
 SELECT * FROM renamed

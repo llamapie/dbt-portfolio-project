@@ -3,15 +3,15 @@ with source AS (
 ),
 renamed AS (
     SELECT
-    "Style" AS style,
-    "SKU" AS sku,
-    "Size" AS product_size,
-    "DATE" AS sale_date,
-    "Months" AS sale_month,
-    "CUSTOMER" AS customer_name,
-    "PCS" AS pieces_sold,
-    "RATE" AS price_per_piece,
-    "GROSS AMT" AS gross_sale_amount
+    "Style"::string AS style,
+    "SKU"::string AS sku,
+    "Size"::string AS product_size,
+    "DATE"::date AS sale_date,
+    "Months"::string AS sale_month,
+    "CUSTOMER"::string AS customer_name,
+    "PCS"::integer AS pieces_sold,
+    "RATE"::float AS price_per_piece,
+    "GROSS AMT"::float AS gross_sale_amount
     FROM source
 )
 SELECT * FROM renamed

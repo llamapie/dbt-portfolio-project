@@ -3,12 +3,12 @@ with source AS (
 ),
 renamed AS (
     SELECT
-    "SKU Code" AS sku_code,
-    "Design No." AS design_no,
-    "Stock" AS stock,
-    "Category" AS category,
-    "Size" AS product_size,
-    "Color" AS color
+    "SKU Code"::string AS sku_code,
+    "Design No."::string AS design_no,
+    "Stock"::integer AS stock,
+    "Category"::string AS category,
+    "Size"::string AS product_size,
+    "Color"::string AS color
     FROM source
 )
 SELECT * FROM renamed
