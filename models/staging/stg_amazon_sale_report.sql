@@ -3,7 +3,6 @@ WITH source AS (
 ), 
 renamed AS (
     SELECT
-    "index" AS index_no,
     "Order ID" AS order_id,
     "Date"::date AS sale_date,
     "Status"::string AS sale_status,

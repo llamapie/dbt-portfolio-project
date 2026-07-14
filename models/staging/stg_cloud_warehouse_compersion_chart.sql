@@ -3,7 +3,6 @@ with source AS (
 ),
 renamed AS (
     SELECT
-    "index" AS item_index,
     "Shiprocket"::numeric AS shiprocket,
     "Unnamed: 1" AS description_increff,
     "INCREFF"::numeric AS increff

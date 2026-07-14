@@ -1,10 +1,17 @@
 # Data Quality Notes
 
 ## All tables/columns
+- Most data types were inferred as varchar when seeded. Reviewed data types in dataset. Declared specific data types for each column to avoid issues down the line.
+- Perform checks on all "Index" columns to determine if required, drop if unnecessary.
 
-- Currently most data types have been inferred as varchar
-- Review data types in dataset
-- Declare specific data types for each column to avoid issues down the line
+## "index" column checks
+- Amazon_Sale_Report: min=0, max=128974, count=128975, all unique/sequential. confirmation of row-index artifact, dropped in staging.
+- Cloud_Warehouse_Compersion_Chart: min=0, max=49, count=50, all unique/sequential. confirmation of row-index artifact, dropped in staging.
+- Expense_IIGF: min=0, max=16, count=17, all unique/sequential. confirmation of row-index artifact, dropped in staging.
+- International_sale_Report: min=0, max=37431, count=37432, all unique/sequential. confirmation of row-index artifact, dropped in staging.
+- May_2022: min=0, max=1329, count=1330, all unique/sequential. Same row count as P_L_March_2021,but records for different time periods, no documented relationship, unlikely to be positional join. Dropped in staging.
+- P_L_March_2021: min=0, max=1329, count=1330, all unique/sequential. Same row count as May_2022, but records for different time periods, no documented relationship, unlikely to be positional join. Dropped in staging.
+- Sale_Report: min=0, max=9270, count=9271, all unique/sequential. confirmation of row-index artifact, dropped in staging.
 
 ## stg_amazon_sale_report
 - "Sales Channel " had trailing space in raw header → caused ref failure until quoted correctly
@@ -14,10 +21,6 @@
 ## stg_cloud_warehouse_compersion_chart
 - "Unnamed: 1" varchar column, content relating to "INCREFF" column. Kept as info seemed descriptive and non-redundant. Inferred name: "description_increff"
 - Checked table data for purpose as "compersion" seems like a typo.
-- "Index" column may not be required. Perform check when all tables staged and drop if unnecessary.
-***
-dbt show --inline "select count(*) from {{ ref('stg_other_table') }} o join {{ ref('Cloud_Warehouse_Compersion_Chart') }} c on o.some_id = c.\"index_column\""
-***
 
 ## Expense_IIGF
 - Raw CSV was actually a manually-kept ledger with merged-cell Excel headers, exported flat. Contained: a duplicate sub-header row, two unrelated ledgers (income/expense) side by side, and summary/total rows mixed in with transactions. Solution: filtered out non-transaction rows, split into two staging models by entity.
