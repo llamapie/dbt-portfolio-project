@@ -4,7 +4,7 @@ Analysing sales and profitability data to identify drivers behind performance tr
 
 ## Overview
 Answering business questions:
-- General sales trends - What are the total sales by month, category and channel? How does sotck level relate to sales performance?
+- Analyse general sales trends - What are the total sales by month, category currency, stock level, and customer for each sale? How is the business perfoming in each channel?
 - Cross-channel price comparison - Which sales channels (Amazon, Myntra, Ajio, etc.) offer the best margins, using MRP vs. TP1/TP2 cost-per-piece data?
 
 ## Dataset
