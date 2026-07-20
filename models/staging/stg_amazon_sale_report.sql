@@ -4,7 +4,7 @@ WITH source AS (
 renamed AS (
     SELECT
     "Order ID" AS order_id,
-    "Date"::date AS sale_date,
+    strptime("Date", '%m-%d-%y')::date AS sale_date,
     "Status"::string AS sale_status,
     "Fulfilment"::string AS fulfilment,
     "Sales Channel " AS sales_channel,

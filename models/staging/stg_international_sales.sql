@@ -6,7 +6,7 @@ renamed AS (
     "Style"::string AS style,
     "SKU"::string AS sku,
     "Size"::string AS product_size,
-    "DATE"::date AS sale_date,
+    strptime("Date", '%m-%d-%y')::date AS sale_date,
     "Months"::string AS sale_month,
     "CUSTOMER"::string AS customer_name,
     "PCS"::integer AS pieces_sold,
