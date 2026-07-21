@@ -54,3 +54,7 @@ Update: In another table "TP" described as "Price of product on third-party plat
 - Table lacks description in dataset.
 - Column names almost identical to table "May_2022" which is described as sales data to optimize product profitability.
 - "TP 1" and "TP 2" described as "Price of product on -- third-party platform.".
+
+## Date column runtime error
+- Casting sale_date to "date" type created runtime error
+- Resolved with strptime("Date", '%m-%d-%y')::date in both instances
