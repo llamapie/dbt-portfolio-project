@@ -21,4 +21,8 @@
 
 ## Filters
 - sale_status: "Shipping", "Pending", "Cancelled" and 10 variations of "Shipped" -  "Returned", "Delivered", "Returning", "Damaged", "Waiting...", "Out for delivery", "Rejected", "Lost in transit", "Picked Up", "Shipped"
-- Determined that every item that is "Cancelled" is not indicative of sales trends.
+- To define a sales trend, investigate "sale_status", determine how the categories end up: shipped or cancelled?
+- sale_status = "Pending"/"Waiting"/"Shipping" excluded because pending orders are concentrated in the final month of the data. Indicative of completed sales in a later snapshot, not of June's performance. This is a data-completeness exclusion.
+- Determined that every item that is "Cancelled"/"Returned"/"Returning"/"Rejected"/"Damaged"/"Lost" is not revenue.
+- sale_status filter isolated to mart_sales_by_sku_month deliberately. Reason: this exclusion (cancelled/pending/returned) reflects "net completed sales" specifically for this mart's business question. Not a universal rule for all future marts. Revisit if most/all future marts end up wanting the same filter.
+- "Cancelled" still being included - revisit to amend filter
