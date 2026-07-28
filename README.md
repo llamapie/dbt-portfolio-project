@@ -19,3 +19,4 @@ Answering business questions:
 - Git / GitHub
 
 ## Project Structure
+- mart_sales_by_sku_month.sql: This mart measures net completed sales, excluding cancelled, pending, and returned orders
