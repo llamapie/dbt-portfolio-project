@@ -6,9 +6,9 @@ SELECT
     SUM(sale_amount) AS total_sale_amount,
     COUNT(*) AS number_of_transactions
 FROM {{ref('stg_amazon_sale_report')}}
-WHERE sale_status NOT LIKE 'Cancelled%'
-  AND sale_status NOT LIKE 'Pending%'
-  AND sale_status NOT LIKE 'Shipping%'
+WHERE sale_status NOT LIKE '%Cancelled%'
+  AND sale_status NOT LIKE '%Pending%'
+  AND sale_status NOT LIKE '%Shipping%'
   AND sale_status NOT LIKE '%Returned%'
   AND sale_status NOT LIKE '%Returning%'
   AND sale_status NOT LIKE '%Rejected%'
