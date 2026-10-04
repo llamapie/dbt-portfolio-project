@@ -10,7 +10,19 @@ Answering business questions:
 ## Dataset
 - Source: https://data.world/anilsharma87
 - Size/scope: row counts per table, number of tables, time period, granularity
-- Notable characteristics: 
+- Notable characteristics:
+
+## Data Quality
+
+The source data needed significant cleaning before it was usable: row-index artifacts, a ledger exported with merged-cell headers, ambiguous column names, and date parsing errors. Every issue and the decision made is recorded in the [data quality log](notes/data_quality_log.md).
+
+Highlights:
+- Verified 7 "index" columns were row-number artifacts before dropping them
+- Split a combined income/expense ledger into two staging models
+- Resolved ambiguous column definitions by comparing data across tables
+
+Status: in progress. Automated dbt tests for these checks are planned.
+
 
 ## Tech Stack
 - dbt-core
